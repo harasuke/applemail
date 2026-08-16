@@ -1,0 +1,114 @@
+.TH MAIL 1 "2026-08-17" "mail 0.1" "User Commands"
+.SH NAME
+mail \- read and search Apple Mail from the command line
+.SH SYNOPSIS
+.B mail
+.I command
+.RI [ options ]
+.SH DESCRIPTION
+.B mail
+is a read\-only command\-line tool for searching and analyzing Apple Mail.
+It reads Mail's Envelope Index and .emlx files directly and emits JSONL by
+default, so output streams and pipes cleanly into scripts and LLM agents.
+.PP
+Nothing under
+.I ~/Library/Mail
+is ever written or modified. The only command that writes files is
+.BR export ,
+and it refuses to write inside Mail's own data directory.
+.SH REQUIREMENTS
+macOS with Apple Mail configured, and
+.B Full Disk Access
+granted to the terminal application (not the
+.B mail
+binary). System Settings \(-> Privacy & Security \(-> Full Disk Access.
+The
+.B trash
+command additionally requires
+.B Automation
+permission for the terminal to control Mail.
+.PP
+Run
+.B "mail doctor"
+first to verify access.
+.SH EXIT STATUS
+.TP
+.B 0
+success, including zero results
+.TP
+.B 1
+general error
+.TP
+.B 2
+Full Disk Access missing
+.TP
+.B 3
+Automation permission missing (trash only)
+.SH COMMANDS
+.TP
+.B "mail doctor [--check-automation]"
+Verify access to Mail's data and report what it found.
+.TP
+.B "mail search [query]"
+Search messages. Metadata filters are instant; a bare
+.I query
+searches message bodies.
+.TP
+.B "mail show <id>"
+Show one message in full, by ROWID.
+.TP
+.B "mail links"
+Extract normalized URLs from matching messages.
+.TP
+.B "mail export --out <dir> [--as eml|json|mbox]"
+Write matching messages to a directory you name.
+.TP
+.B "mail stats"
+Emit one aggregate summary record over the matching messages.
+.TP
+.B "mail trash [id]"
+Move messages to Trash (recoverable, never permanent).
+.TP
+.B "mail reference"
+Print the full reference guide embedded in the binary.
+.SH SHARED FILTERS
+Every message\-selecting command accepts the same flags:
+.BR \-\-from ,
+.BR \-\-to ,
+.BR \-\-subject ,
+.BR \-\-mailbox ,
+.BR \-\-since ,
+.BR \-\-until ,
+.BR \-\-unread ,
+.BR \-\-flagged ,
+.BR \-\-has\-attachment ,
+and
+.BR \-\-limit .
+.PP
+.B \-\-limit
+defaults to 50 for
+.BR search ,
+and to 0 (unlimited) for
+.BR links ,
+.BR export ,
+.BR stats ,
+and
+.BR trash .
+.SH OUTPUT FORMAT
+.BR \-\-format " jsonl" " (default), " json ", " table ", or " text .
+JSONL is the contract: one JSON object per line, streamed as results are
+parsed. Errors go to stderr, so stdout stays pipeable.
+.SH EXAMPLES
+.nf
+mail search \-\-from linkedin \-\-since 30d
+mail search "invoice" \-\-since 90d
+mail show 48213
+mail links \-\-from linkedin | jq \-r '.url_canonical'
+mail export \-\-out ./archive \-\-since 1y \-\-as mbox
+mail stats \-\-since 6m
+mail trash \-\-from linkedin \-\-dry\-run
+.fi
+.SH SEE ALSO
+Run
+.B "mail reference"
+for the complete guide: output schema, gotchas, and recipes.
