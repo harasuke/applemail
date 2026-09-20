@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"os"
 	"strconv"
 	"strings"
 	"testing"
@@ -54,6 +55,9 @@ func resetFlags() {
 	flagDryRun = false
 	flagCheckAutomation = false
 	flagVerify = false
+	flagSkillUninstall = false
+	flagSkillCheck = false
+	userHomeDir = os.UserHomeDir
 	moveToTrash = mailctl.MoveToTrash
 	verifyRemaining = mailctl.RemainingInMailboxes
 	listAccounts = mailctl.ListAccounts

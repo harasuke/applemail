@@ -33,6 +33,9 @@ var (
 	flagCheckAutomation bool
 	flagVerify          bool
 
+	flagSkillUninstall bool
+	flagSkillCheck     bool
+
 	// limitDefaults records each command's --limit default so tests can
 	// reset the per-command flag after an Execute call mutates it.
 	limitDefaults = map[*cobra.Command]int{}
