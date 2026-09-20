@@ -58,6 +58,8 @@ func resetFlags() {
 	flagSkillUninstall = false
 	flagSkillCheck = false
 	userHomeDir = os.UserHomeDir
+	checkMailAccess = defaultCheckMailAccess
+	checkAutomationAccess = mailctl.CheckAutomation
 	moveToTrash = mailctl.MoveToTrash
 	verifyRemaining = mailctl.RemainingInMailboxes
 	listAccounts = mailctl.ListAccounts

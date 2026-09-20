@@ -15,13 +15,15 @@ import (
 var userHomeDir = os.UserHomeDir
 
 // skillDirs maps each agent harness to its skill directory, relative to the
-// home directory. Codex and Gemini CLI both honor .agents/skills, so the
-// third entry covers both; the fourth keeps the explicit ~/.gemini/skills.
-var skillDirs = []struct{ name, dir string }{
-	{"Claude Code", ".claude/skills/mail"},
-	{"opencode", ".config/opencode/skills/mail"},
-	{"Codex / Gemini CLI", ".agents/skills/mail"},
-	{"Gemini CLI", ".gemini/skills/mail"},
+// home directory. `detect` is the config directory whose presence marks the
+// harness as installed (used by `mail setup` for pre-selection). Codex and
+// Gemini CLI both honor .agents/skills, so the Codex entry covers both; the
+// Gemini entry keeps the explicit ~/.gemini/skills.
+var skillDirs = []struct{ name, dir, detect string }{
+	{"Claude Code", ".claude/skills/mail", ".claude"},
+	{"opencode", ".config/opencode/skills/mail", ".config/opencode"},
+	{"Codex", ".agents/skills/mail", ".codex"},
+	{"Gemini CLI", ".gemini/skills/mail", ".gemini"},
 }
 
 var installSkillsCmd = &cobra.Command{
