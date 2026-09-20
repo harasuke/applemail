@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func openFixtureStore(t *testing.T) *Store {

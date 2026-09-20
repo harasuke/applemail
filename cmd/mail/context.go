@@ -10,8 +10,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/mailctl"
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 // listAccounts is the seam tests substitute to avoid invoking AppleScript.

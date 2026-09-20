@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mirko/applemail/internal/mailstore"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func newFixtureScanner(t *testing.T) (*Scanner, string) {

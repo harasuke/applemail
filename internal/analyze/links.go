@@ -8,7 +8,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 // LinkClass says whether a link is worth opening.

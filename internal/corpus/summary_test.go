@@ -3,7 +3,7 @@ package corpus
 import (
 	"testing"
 
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 func msg(id int64, sender, date string, read bool) output.Message {

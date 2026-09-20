@@ -6,9 +6,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/analyze"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/analyze"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var linksCmd = &cobra.Command{

@@ -4,7 +4,7 @@ import (
 	"net/mail"
 	"strings"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 // Signals are facts read from message headers — never judgments.

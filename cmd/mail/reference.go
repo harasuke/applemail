@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/reference"
+	"github.com/harasuke/applemail/internal/reference"
 )
 
 var referenceCmd = &cobra.Command{

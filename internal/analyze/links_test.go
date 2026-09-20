@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/emlx"
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func TestNormalizeStripsTrackingParams(t *testing.T) {

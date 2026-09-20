@@ -4,7 +4,7 @@ import (
 	"net/mail"
 	"testing"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 func msgWithHeaders(h map[string][]string) *emlx.Message {

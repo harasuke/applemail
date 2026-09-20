@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- **Go 1.26.5**, module path `github.com/mirko/applemail`. Binary name `mail`.
+- **Go 1.26.5**, module path `github.com/harasuke/applemail`. Binary name `mail`.
 - **Read-only Envelope Index always.** `trash` never writes the DB or any file under `~/Library/Mail`. Mutation goes through `osascript` → Mail.app only.
 - **The Envelope Index `message_id` column is an internal ID** (e.g. `-1293673308154836185`), NOT the RFC header. The RFC `Message-ID` (e.g. `<CAF...@mail.gmail.com>`) is extracted by `internal/emlx` into `Message.MessageID`. AppleScript addresses messages by the RFC header.
 - **stdout is pure JSONL.** Errors, skip counts, and not-found counts go to stderr.
@@ -503,7 +503,7 @@ Expected: FAIL — `undefined: automationMessage`, and `exitCodeFor(ErrAutomatio
 
 - [ ] **Step 3: Write the implementation**
 
-In `cmd/mail/context.go`, update the exit-code constants and `exitCodeFor`, and add `automationMessage`. Add `"github.com/mirko/applemail/internal/mailctl"` to the imports.
+In `cmd/mail/context.go`, update the exit-code constants and `exitCodeFor`, and add `automationMessage`. Add `"github.com/harasuke/applemail/internal/mailctl"` to the imports.
 
 ```go
 const (
@@ -600,7 +600,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/mailctl"
 )
 
 func TestTrashDryRunEmitsRecordsWithoutActing(t *testing.T) {
@@ -735,9 +735,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/mailctl"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 // moveToTrash is the seam tests substitute to avoid invoking AppleScript.

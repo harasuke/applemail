@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mirko/applemail/internal/mailctl"
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 func main() {

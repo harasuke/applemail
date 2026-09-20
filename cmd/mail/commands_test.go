@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/mailctl"
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 // runCommand executes the CLI against a fixture Mail directory and

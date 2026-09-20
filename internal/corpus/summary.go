@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 const topN = 10

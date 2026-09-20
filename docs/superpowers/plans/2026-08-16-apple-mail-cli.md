@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- **Go 1.26.5**, target `darwin/arm64`. Module path: `github.com/mirko/applemail`.
+- **Go 1.26.5**, target `darwin/arm64`. Module path: `github.com/harasuke/applemail`.
 - **Binary name is `mail`.** Built from `cmd/mail`.
 - **Read-only, always.** Mail's DB is opened `file:<path>?mode=ro&immutable=1`. Nothing under `~/Library/Mail` is ever written or modified. `export` is the only command that writes, and only to a user-named path.
 - **No network requests, ever.** The CLI never fetches a URL. Redirect unwrapping is done offline from query-string parameters only.
@@ -85,7 +85,7 @@
 
 ```bash
 cd /Users/mirko/Desktop/Projects/apple_mail_cli
-go mod init github.com/mirko/applemail
+go mod init github.com/harasuke/applemail
 ```
 
 - [ ] **Step 2: Write the failing test**
@@ -1093,7 +1093,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func openFixtureStore(t *testing.T) *Store {
@@ -1405,7 +1405,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func newFixturePathIndex(t *testing.T) (*PathIndex, string) {
@@ -1584,7 +1584,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func TestParseSplitsThreeParts(t *testing.T) {
@@ -1799,7 +1799,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func extractFixture(t *testing.T, idx int) *Message {
@@ -2341,8 +2341,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/emlx"
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func TestNormalizeStripsTrackingParams(t *testing.T) {
@@ -2545,7 +2545,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 // LinkClass says whether a link is worth opening.
@@ -2822,7 +2822,7 @@ import (
 	"net/mail"
 	"testing"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 func msgWithHeaders(h map[string][]string) *emlx.Message {
@@ -2923,7 +2923,7 @@ import (
 	"net/mail"
 	"strings"
 
-	"github.com/mirko/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/emlx"
 )
 
 // Signals are facts read from message headers — never judgments.
@@ -3601,9 +3601,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mirko/applemail/internal/mailstore"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func newFixtureScanner(t *testing.T) (*Scanner, string) {
@@ -3829,10 +3829,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/mirko/applemail/internal/analyze"
-	"github.com/mirko/applemail/internal/emlx"
-	"github.com/mirko/applemail/internal/mailstore"
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/analyze"
+	"github.com/harasuke/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 // Options control one scan.
@@ -4202,7 +4202,7 @@ package corpus
 import (
 	"testing"
 
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 func msg(id int64, sender, date string, read bool) output.Message {
@@ -4352,7 +4352,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 const topN = 10
@@ -4536,7 +4536,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 func TestExitCodeForPermissionError(t *testing.T) {
@@ -4627,7 +4627,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 // Exit codes. A distinct code for permissions lets a script tell
@@ -4841,7 +4841,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 func main() {
@@ -4912,7 +4912,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 // runCommand executes the CLI against a fixture Mail directory and
@@ -5046,7 +5046,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/mailstore"
 )
 
 var doctorCmd = &cobra.Command{
@@ -5119,9 +5119,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/corpus"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/corpus"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var searchCmd = &cobra.Command{
@@ -5395,8 +5395,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var showCmd = &cobra.Command{
@@ -5477,9 +5477,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/analyze"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/analyze"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var linksCmd = &cobra.Command{
@@ -5829,9 +5829,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/emlx"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var exportCmd = &cobra.Command{

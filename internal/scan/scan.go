@@ -9,10 +9,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/mirko/applemail/internal/analyze"
-	"github.com/mirko/applemail/internal/emlx"
-	"github.com/mirko/applemail/internal/mailstore"
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/analyze"
+	"github.com/harasuke/applemail/internal/emlx"
+	"github.com/harasuke/applemail/internal/mailstore"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 // Options control one scan.

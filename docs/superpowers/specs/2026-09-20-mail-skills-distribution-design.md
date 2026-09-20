@@ -125,7 +125,7 @@ Behavior:
 ## 7. Distribution
 
 ```bash
-go install github.com/mirko/applemail/cmd/mail@latest
+go install github.com/harasuke/applemail/cmd/mail@latest
 mail install-skills
 ```
 

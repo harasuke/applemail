@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/skill"
+	"github.com/harasuke/applemail/internal/skill"
 )
 
 // userHomeDir is a function so tests can point it at a fake home directory.

@@ -5,9 +5,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/corpus"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/corpus"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 var searchCmd = &cobra.Command{

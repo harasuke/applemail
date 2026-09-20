@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func newFixturePathIndex(t *testing.T) (*PathIndex, string) {

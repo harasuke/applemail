@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mirko/applemail/internal/testdata"
+	"github.com/harasuke/applemail/internal/testdata"
 )
 
 func extractFixture(t *testing.T, idx int) *Message {

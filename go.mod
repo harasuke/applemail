@@ -1,4 +1,4 @@
-module github.com/mirko/applemail
+module github.com/harasuke/applemail
 
 go 1.26.5
 

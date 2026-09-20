@@ -6,9 +6,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/mailctl"
-	"github.com/mirko/applemail/internal/output"
-	"github.com/mirko/applemail/internal/scan"
+	"github.com/harasuke/applemail/internal/mailctl"
+	"github.com/harasuke/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/scan"
 )
 
 // moveToTrash is the seam tests substitute to avoid invoking AppleScript.

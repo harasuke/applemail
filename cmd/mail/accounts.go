@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/output"
+	"github.com/harasuke/applemail/internal/output"
 )
 
 var accountsCmd = &cobra.Command{

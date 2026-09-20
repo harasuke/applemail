@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Module path is `github.com/mirko/applemail`.
+- Module path is `github.com/harasuke/applemail`.
 - Follow the existing embed pattern exactly: `internal/<pkg>/<pkg>.go` with `//go:embed <file>.md` and a `Markdown() string` accessor.
 - All command flags are package-level globals declared in `cmd/mail/root.go` and reset in `cmd/mail/commands_test.go` (`resetFlags`), because cobra binds flags to variables that persist across `Execute` calls in a test binary.
 - The skill body must stay under ~150 lines; it must not inline the full JSON schema (it points to `mail reference`).
@@ -219,7 +219,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mirko/applemail/internal/skill"
+	"github.com/harasuke/applemail/internal/skill"
 )
 
 // userHomeDir is a function so tests can point it at a fake home directory.
