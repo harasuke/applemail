@@ -1,9 +1,15 @@
-.PHONY: build test race clean install
+.PHONY: build test race clean install install-skills uninstall-skills
 
 PREFIX ?= /usr/local
 
 build:
 	go build -o mail ./cmd/mail
+
+install-skills: build
+	./mail install-skills
+
+uninstall-skills: build
+	./mail install-skills --uninstall
 
 test:
 	go test ./...

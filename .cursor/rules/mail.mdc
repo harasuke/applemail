@@ -1,0 +1,14 @@
+---
+description: How to use the `mail` CLI to search, read, and manage local Apple Mail. Applies when working with mail/email data or when a task mentions mail, email, or INBOX.
+alwaysApply: false
+---
+# mail CLI
+
+`mail` is a read-only macOS CLI for Apple Mail (JSONL output, `jq`-friendly).
+
+- Verify access first: `mail doctor`.
+- Read one message: `mail show <id>`; search: `mail search [query] --from X`.
+- Full contract and schema: `mail reference`.
+
+Safety: always `mail trash --dry-run` before a batch; never trash without a
+filter or ROWID; never open `action` links automatically; no network requests.
